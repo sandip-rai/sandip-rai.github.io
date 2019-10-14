@@ -1,94 +1,55 @@
-## Phantom for Jekyll
+# Pineapple
 
-A minimalist, responsive portfolio theme for [Jekyll](http://jekyllrb.com/) with Bootstrap.
+Pineapple is a minimalistic [Jekyll](https://jekyllrb.com) portfolio theme that focuses on putting your projects in the spotlight.
 
-![preview](preview.jpg)
+![Pineapple screenshot](https://user-images.githubusercontent.com/9528895/38713105-6dda8a74-3ec7-11e8-8062-8aa6cf24c795.jpg)
 
-[See it in action](http://jamigibbs.github.io/phantom/).
+See Pineapple in action on the [demo site](https://arnolds.io/pineapple/).
 
-## Fancy using it for your own site?
+## Contents
 
-Here are some steps to get you started:
+- [Setup](#setup)
+- [Deploy to Github Pages](#deploy-to-github-pages)
+- [Creating projects](#creating-projects)
+- [Resources](#resources)
+- [License](#license)
 
-1. Clone this repo and cd into the directory:
+## Setup
 
-  ```bash
-  git clone https://github.com/jamigibbs/phantom.git your-dir-name && cd your-dir-name
-  ```
+Install dependencies:
 
-2. Run Jekyll:
-
-  ```bash
-  bundle exec jekyll serve
-  ```
-
-  _Don't have Jekyll yet? [Get `er installed then!](http://jekyllrb.com/docs/installation/)_
-
-3. Visit in your browser at:
-
-  `http://127.0.0.1:4000`
-
-## Launching with Github Pages :rocket:
-
-Jekyll + Github pages is a marriage made in heaven. You can [use your own custom domain name](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/) or use the default Github url (ie. http://username.github.io/repository) and not bother messing around with DNS settings.
-
-## Theme Features
-
-### Navigation
-
-Navigation can be customized in `_config.yml` under the `nav_item` key. Default settings:
-
-```yaml
-nav_item:
-    - { url: '/', text: 'Home' }
-    - { url: '/about', text: 'About' }
+```
+$ gem install jekyll bundler
 ```
 
-Set the `nav_enable` variable to false in `_config.yml` to disable navigation.
+Pulldown the project:
 
-### Contact Form
-
-You can display a contact form within the modal window template. This template is already setup to use the [Formspree](https://formspree.io) email system. You'll just want to add your email address to the form in `/_includes/contact-modal.html`.
-
-Place the modal window template in any place you'd like the user to click for the contact form.
-The template will display a link to click for the contact form modal window:
-
-```liquid
-{% include contact.html %}
-{% include contact-modal.html %}
+```
+$ git clone git@github.com:arnolds/pineapple.git
+$ cd pineapple
 ```
 
-### Animation Effects
+Start Jekyll:
 
-Animations with CSS classes are baked into the theme. To animate a section or element, simply add the animation classes:
-
-```html
-<div id="about-me" class="wow fadeIn">
-  I'm the coolest!
-</div>
+```
+$ jekyll serve
 ```
 
-For a complete list of animations, see the [animation list](http://daneden.github.io/animate.css/).
+Browse to http://127.0.0.1:4000/pineapple/ for some Pineapple goodness.
 
-### Pagination
+## Deploy to Github Pages
 
-By default, pagination on the home page will activate after 10 posts. You can change this within `_config.yml`. You can add the pagination to other layouts with:
+1. Fork this repository, then rename the repository to yourgithubusername.github.io.
+2. Update user configuration values in `_config.yml`, and also set `baseurl: ""`.
 
-```liquid
-  {% for post in paginator.posts %}
-    {% include post-content.html %}
-  {% endfor %}
+## Creating projects
 
-  {% include pagination.html %}
-```
+Projects are created as `.md` documents within the `_posts/projects` directory. They follow the same naming conventions as regular [Jekyll posts](https://jekyllrb.com/docs/posts/). Pineapple comes with four example projects, which you should use as a guide for creating your own e.g. [Red Pineapple](_posts/projects/2017-04-01-redpineapple.md).
 
-Read more about the [pagination plugin](http://jekyllrb.com/docs/pagination/).
+## Resources
 
-## Credit
+- [Apple Devices PSD Mockup Templates](https://www.graphicsfuel.com/2016/04/apple-devices-psd-mockup-templates/)
 
-* Bootstrap, http://getbootstrap.com/, (C) 2011 - 2016 Twitter, Inc., [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+## License
 
-* Wow, https://github.com/matthieua/WOW, (C) 2014 - 2016 Matthieu Aussaguel
-, [GPL](https://github.com/matthieua/WOW#open-source-license)
-
-* Animate.css, https://github.com/daneden/animate.css, (C) 2016 Daniel Eden, [MIT](https://github.com/daneden/animate.css/blob/master/LICENSE)
+Open sourced under the [MIT license](LICENSE.md).
